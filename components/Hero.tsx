@@ -3,7 +3,7 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-[95vh] flex items-center overflow-hidden bg-brand-secondary">
+    <section id="home" className="relative min-h-[95vh] flex items-center overflow-hidden bg-brand-secondary">
       {/* Dynamic Background Image */}
       <img 
         src="https://images.unsplash.com/photo-1544016768-982d1554f0b9?auto=format&fit=crop&q=80&w=1920" 
