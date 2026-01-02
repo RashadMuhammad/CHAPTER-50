@@ -22,24 +22,17 @@ const Services: React.FC = () => {
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-32">
         {SERVICES.map((service, index) => (
           <div key={service.id} className="group cursor-default">
-            {/* Technical Placeholder replacing broken images */}
-            <div className="relative aspect-[21/9] mb-10 overflow-hidden bg-slate-50 border border-slate-100 shadow-sm group-hover:shadow-xl transition-all duration-500">
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-200"></div>
-              {/* Decorative technical line pattern */}
-              <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity" style={{ 
-                backgroundImage: 'repeating-linear-gradient(45deg, #000 0, #000 1px, transparent 0, transparent 20px)' 
-              }}></div>
-              
-              <div className="absolute inset-0 flex items-center justify-center">
-                 <div className="w-24 h-24 border border-brand-primary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-700">
-                    <svg className="w-10 h-10 text-brand-primary/20 group-hover:text-brand-primary/40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.09-.36.14-.57.14s-.41-.05-.57-.14l-7.9-4.44c-.31-.17-.53-.5-.53-.88V7.5c0-.38.21-.71.53-.88l7.9-4.44c.16-.09.36-.14.57-.14s.41.05.57.14l7.9 4.44c.31.17.53.5.53.88v9z" />
-                    </svg>
-                 </div>
-              </div>
+            {/* Service Image Preview */}
+            <div className="relative aspect-[21/9] mb-10 overflow-hidden bg-slate-100 border border-slate-100 shadow-sm group-hover:shadow-2xl transition-all duration-700">
+              <img 
+                src={service.imageUrl} 
+                alt={service.title} 
+                className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+              />
+              <div className="absolute inset-0 bg-brand-secondary/20 group-hover:bg-transparent transition-colors duration-700"></div>
               
               <div className="absolute bottom-6 left-6 px-4 py-1 bg-brand-primary text-white text-[10px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all">
-                Aviation Excellence
+                DWC Operational Data
               </div>
             </div>
 

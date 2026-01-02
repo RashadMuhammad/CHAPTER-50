@@ -3,15 +3,22 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-brand-secondary">
-      {/* High-end Gradient and Pattern background */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-brand-secondary via-brand-primary to-blue-900 z-10 opacity-90"></div>
+    <section className="relative min-h-[95vh] flex items-center overflow-hidden bg-brand-secondary">
+      {/* Dynamic Background Image */}
+      <img 
+        src="https://images.unsplash.com/photo-1544016768-982d1554f0b9?auto=format&fit=crop&q=80&w=1920" 
+        alt="Aviation Background" 
+        className="absolute inset-0 w-full h-full object-cover scale-100 animate-[slow-pan_40s_linear_infinite]"
+      />
       
-      {/* Moving Technical Grid Pattern */}
+      {/* High-end Gradient and Dark Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-brand-secondary/90 via-brand-secondary/70 to-brand-primary/40 z-10"></div>
+      
+      {/* Decorative Technical Elements */}
       <div className="absolute inset-0 z-10 opacity-10 pointer-events-none">
         <div className="absolute inset-0" style={{ 
           backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', 
-          backgroundSize: '80px 80px' 
+          backgroundSize: '100px 100px' 
         }}></div>
       </div>
 
@@ -46,8 +53,13 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Decorative accent element */}
-      <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-blue-500/10 blur-[120px] rounded-full -mb-32 -mr-32"></div>
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes slow-pan {
+          0% { transform: scale(1.1) translateX(0); }
+          50% { transform: scale(1.2) translateX(-2%); }
+          100% { transform: scale(1.1) translateX(0); }
+        }
+      `}} />
     </section>
   );
 };
