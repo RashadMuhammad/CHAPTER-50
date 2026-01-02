@@ -9,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        content: ["./index.html", "./**/*.{js,ts,jsx,tsx}"],
         theme: {
           extend: {
             colors: {
@@ -33,6 +34,7 @@
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
+            background-color: #ffffff;
         }
         /* Custom scrollbar for a premium feel */
         ::-webkit-scrollbar {
@@ -49,16 +51,16 @@
 <script type="importmap">
 {
   "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+    "react": "https://esm.sh/react@^19.2.3"
   }
 }
 </script>
 </head>
 <body class="bg-white text-slate-900">
     <div id="root"></div>
-    <!-- This script tag is essential to start the React application -->
+    <!-- Vite will handle this entry point correctly -->
     <script type="module" src="./index.tsx"></script>
 </body>
 </html>
