@@ -8,7 +8,7 @@ const Services: React.FC = () => {
       <div className="container mx-auto px-6 mb-24">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
           <div className="max-w-2xl">
-            <h2 className="text-brand-primary text-xs font-black uppercase tracking-[0.5em] mb-6">Expertise</h2>
+            <h2 className="text-brand-primary text-xs font-black uppercase tracking-[0.5em] mb-6">Services</h2>
             <h3 className="text-5xl md:text-7xl font-black text-slate-900 leading-none tracking-tighter uppercase">Solutions.</h3>
           </div>
           <div className="max-w-md border-l-4 border-brand-primary pl-8 py-2">
