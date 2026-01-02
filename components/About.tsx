@@ -35,8 +35,12 @@ const About: React.FC = () => {
           </div>
 
           <div className="lg:w-1/2 relative">
-            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
-              <img src="https://images.unsplash.com/photo-1570610155223-66279ba48541?auto=format&fit=crop&q=80&w=1000" alt="Dubai Cargo Hub" className="w-full h-[500px] object-cover" />
+            {/* Placeholder instead of broken image */}
+            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl bg-slate-100 h-[500px] flex items-center justify-center border border-slate-200">
+              <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(45deg, #0047AB 25%, transparent 25%, transparent 50%, #0047AB 50%, #0047AB 75%, transparent 75%, transparent)', backgroundSize: '100px 100px' }}></div>
+              <svg className="w-32 h-32 text-slate-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.09-.36.14-.57.14s-.41-.05-.57-.14l-7.9-4.44c-.31-.17-.53-.5-.53-.88V7.5c0-.38.21-.71.53-.88l7.9-4.44c.16-.09.36-.14.57-.14s.41.05.57.14l7.9 4.44c.31.17.53.5.53.88v9z" />
+              </svg>
             </div>
             <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-600 rounded-3xl -z-10 flex flex-col items-center justify-center p-6 text-white text-center shadow-xl">
                <span className="text-4xl font-bold">25+</span>

@@ -12,7 +12,7 @@ export const SERVICES: Service[] = [
       'Build-up & Breakdown of cargo units',
       'Correct placement and securing'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1566415033480-1a221f008f1b?auto=format&fit=crop&q=80&w=800'
+    imageUrl: ''
   },
   {
     id: 'supervision',
@@ -24,7 +24,7 @@ export const SERVICES: Service[] = [
       'DNATA handling for all shipments',
       'Flight loading coordination'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800'
+    imageUrl: ''
   },
   {
     id: 'flight-planning',
@@ -36,7 +36,7 @@ export const SERVICES: Service[] = [
       'Landing and overfly permits',
       'Turn-around support'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1544016768-982d1554f0b9?auto=format&fit=crop&q=80&w=800'
+    imageUrl: ''
   },
   {
     id: 'air-freight',
@@ -48,7 +48,7 @@ export const SERVICES: Service[] = [
       'Tariff updates and processing',
       'Secure and cost-effective movement'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=800'
+    imageUrl: ''
   }
 ];
 
@@ -82,6 +82,6 @@ export const VALUES: Value[] = [
 
 export const CONTACT_INFO: ContactInfo = {
   address: 'Chapter50 Aviation service FZCO, Dubai World Central (DWC), Dnata Agent Building Office No: 30, Jebel Ali, UAE',
-  email: 'ops@chapter50as.com', // Example email based on context
+  email: 'ops@chapter50as.com',
   phone: ['052 9029984', '056 5572169']
 };
