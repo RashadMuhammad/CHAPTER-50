@@ -1,0 +1,7 @@
+{
+  "name": "Chapter50 Aviation Services",
+  "description": "Professional landing page for Chapter50 Aviation Services, specializing in airside and cargo operations in Dubai with over 25 years of expertise.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
