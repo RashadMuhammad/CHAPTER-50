@@ -64,7 +64,7 @@ const About: React.FC = () => {
         </div>
 
         {/* Values Section */}
-        <div className="mt-10">
+        <div className="mt-40">
           <div className="text-center mb-20">
             <h3 className="text-brand-primary text-xs font-black uppercase tracking-[0.5em] mb-4">
               Values
@@ -105,7 +105,7 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-40">
           <div className="text-center mb-20">
             <h3 className="text-brand-primary text-xs font-black uppercase tracking-[0.5em] mb-4">
               SPECIALITIES
