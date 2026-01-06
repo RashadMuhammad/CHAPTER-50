@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,23 +35,17 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <div
-            className={`w-10 h-10 rounded-full flex items-center justify-center ${
-              isScrolled ? "bg-blue-600" : "bg-white"
+            className={`w-10 h-10 rounded-full flex items-center justify-center overflow-hidden ${
+              isScrolled ? "bg-white" : "bg-white"
             }`}
           >
-            {/* Simple representation of the logo plane */}
-            <svg
-              viewBox="0 0 100 100"
-              className={`w-6 h-6 ${
-                isScrolled ? "text-white" : "text-blue-600"
-              }`}
-            >
-              <path
-                fill="currentColor"
-                d="M10 50 L40 50 L45 35 L55 35 L60 50 L90 50 L90 55 L60 55 L55 70 L45 70 L40 55 L10 55 Z"
-              />
-            </svg>
+            <img
+              src="/Company_logo.png"
+              alt="Chapter50 Logo"
+              className="w-full h-full object-cover scale-140"
+            />
           </div>
+
           <span
             className={`text-xl font-bold tracking-wider ${
               isScrolled ? "text-blue-900" : "text-white"
@@ -77,7 +72,10 @@ const Navbar: React.FC = () => {
         </div>
 
         <div className="md:hidden">
-          <button className={`${isScrolled ? "text-slate-700" : "text-white"}`}>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className={`${isScrolled ? "text-slate-700" : "text-white"}`}
+          >
             <svg
               className="w-6 h-6"
               fill="none"
@@ -94,6 +92,31 @@ const Navbar: React.FC = () => {
           </button>
         </div>
       </div>
+
+      {menuOpen && (
+        <div
+          className={`md:hidden px-6 pb-6 ${
+            isScrolled ? "bg-white" : "bg-blue-900/95"
+          }`}
+        >
+          <div className="flex flex-col space-y-4 pt-4">
+            {navLinks.map((link) => (
+              <button
+                key={link.name}
+                onClick={() => {
+                  scrollToSection(link.id);
+                  setMenuOpen(false); 
+                }}
+                className={`text-left text-sm font-semibold uppercase tracking-widest ${
+                  isScrolled ? "text-slate-700" : "text-white"
+                }`}
+              >
+                {link.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
