@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
         ></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-20">
+      <div className="container mx-auto px-6 relative z-20 pt-24 sm:pt-0">
         <div className="max-w-4xl">
           <div className="inline-flex items-center space-x-3 px-4 py-1.5 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full mb-10">
             <span className="flex h-2 w-2">
