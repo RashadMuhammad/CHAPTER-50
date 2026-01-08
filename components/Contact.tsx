@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { CONTACT_INFO } from "../constants";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -10,24 +12,30 @@ const Contact: React.FC = () => {
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setSuccess(false);
 
     emailjs
       .sendForm(
-        "service_bd5gpeh", // ✅ Your Service ID
-        "template_84grj2h", // ✅ Your Template ID
+        "service_bd5gpeh",
+        "template_84grj2h",
         formRef.current!,
-        "ydbJ2Kmq9zVUyS6Lp" // ✅ Your Public Key
+        "ydbJ2Kmq9zVUyS6Lp"
       )
       .then(() => {
-        setSuccess(true);
+        toast.success("Message sent successfully ✈️", {
+          position: "top-right",
+          autoClose: 3000,
+        });
+
         setLoading(false);
         formRef.current?.reset();
       })
-      .catch((error) => {
-        console.error("EmailJS Error:", error);
+      .catch(() => {
+        toast.error("Failed to send message. Try again!", {
+          position: "top-right",
+          autoClose: 3000,
+        });
+
         setLoading(false);
-        alert("Failed to send message. Please try again.");
       });
   };
 
@@ -207,13 +215,17 @@ const Contact: React.FC = () => {
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all resize-none"
                 ></textarea>
               </div>
-              <button className="w-full py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-200 transform hover:-translate-y-1 transition-all active:scale-95">
-                Send Message
+              <button
+                disabled={loading}
+                className="w-full py-4 bg-blue-600 text-white font-bold rounded-xl disabled:opacity-60"
+              >
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
         </div>
       </div>
+      <ToastContainer aria-label="Notifications" />
     </section>
   );
 };
